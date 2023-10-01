@@ -1,0 +1,196 @@
+main {
+  margin-top: 1.4rem;
+
+  @include breakPoint-down(small){
+  padding: 0 2.5rem;
+  margin-top: 8rem;
+  }
+
+  .date {
+    padding: 0.5rem 1.6rem;
+    margin-top: 1rem;
+    border-radius: $border-radius-1;
+    background: $color-light;
+    display: inline-block;
+
+    input[type="date"] {
+      background: transparent;
+      color: $color-dark;
+    }
+  }
+
+  .insights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+    @include breakPoint-down(medium){
+      grid-template-columns: 1fr;
+      gap: 0;
+     
+       }
+
+    > div {
+      background-color: $color-white;
+      padding: $card-padding;
+      box-shadow: $box-shadow;
+      margin-top: 1rem;
+      border-radius: $card-border-radius;
+      transition: all 300ms ease;
+      span {
+        color: $color-white;
+        padding: 0.5rem;
+        border-radius: 50%;
+        font-size: 2rem;
+      }
+      &.sales span {
+        background-color: $color-primary;
+      }
+      &.expenses span {
+        background-color: $color-danger;
+      }
+      &.income span {
+        background-color: $color-sucess;
+      }
+      &:hover {
+        box-shadow: none;
+      }
+
+      &.sales {
+        circle {
+          stroke-dashoffset: -30;
+          stroke-dasharray: 200;
+        }
+      }
+
+      &.expenses {
+        circle {
+          stroke-dashoffset: -98;
+          stroke-dasharray: 117;
+        }
+      }
+      &.income {
+        circle {
+          stroke-dashoffset: 35;
+          stroke-dasharray: 110;
+        }
+      }
+
+      .middle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+
+        .left {
+          h3 {
+            margin: 1rem 0 0.6rem;
+            font-size: 1rem;
+          }
+        }
+        .progress {
+          position: relative;
+          width: 92px;
+          height: 92px;
+          border-radius: 50%;
+
+          svg {
+            width: 7rem;
+            height: 7rem;
+
+            circle {
+              fill: none;
+              transform: translate(5px, 5px);
+              stroke: $color-primary;
+              stroke-width: 14;
+
+              stroke-linecap: round;
+            }
+          }
+
+          .number {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+
+      .text-muted {
+        display: block;
+        margin-top: 1.6rem;
+      }
+    }
+  }
+  // end of insights styles
+
+  .recent-orders {
+    margin: 2rem 0;
+    @include breakPoint-down(medium){
+      width: 94%;
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+      margin: 6.5rem 0 0 8.8rem;
+   
+     
+       }
+       @include breakPoint-down(small){
+      width: 100%;
+      position: relative;
+      margin: 3rem 0 0 0;
+      }
+
+    h2 {
+      margin-bottom: 0.8rem;
+    }
+
+    table {
+      background-color: $color-white;
+      box-shadow: $box-shadow;
+      padding: $card-padding;
+      text-align: center;
+      border-radius: $card-border-radius;
+      width: 100%;
+      transition: all 300ms ease;
+      @include breakPoint-down(medium){
+        width: 84%;
+     
+     
+       
+         }
+         @include breakPoint-down(small){
+          width: 100%;
+          margin: 0;
+         
+          }
+      tbody {
+        td {
+          height: 2.8rem;
+          border-bottom: 1px solid $color-light;
+        }
+
+        tr {
+          &:last-child td {
+            border-bottom: none;
+          }
+        }
+      }
+      &:hover {
+        box-shadow: none;
+      }
+    }
+
+    a{
+        display: block;
+        margin: 0 auto;
+        color: $color-primary;
+        text-align: center;
+        margin-top: 1rem;
+    }
+  }
+}

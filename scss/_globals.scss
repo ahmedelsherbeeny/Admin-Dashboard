@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,800;1,300;1,800&family=Public+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap");
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  list-style: none;
+  appearance: none;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+.active {
+  color: white;
+  background-color: $color-primary;
+  border-radius: $border-radius-1;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: poppins, sans-serif;
+  font-size: 0.88rem;
+  background: $color-background;
+  user-select: none;
+  overflow-x: hidden;
+  color: $color-dark;
+}
+.container{
+  display: grid;
+  margin: 0 auto;
+  width: 96%;
+  grid-template-columns: 14rem auto 23rem;
+  gap: 1.8rem;
+
+  @include breakPoint-down(medium){
+    width: 94%;
+grid-template-columns: 7rem auto 23rem;
+  }
+  @include breakPoint-down(small){
+    width: 100%;
+    grid-template-columns: 1fr;
+
+  }
+}
+
+.profile-photo {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 2.8rem;
+  height: 2.8rem;
+}
+img {
+  width: 100%;
+  display: block;
+}
+h1 {
+  font-weight: 800;
+  font-size: 1.8rem;
+}
+h2 {
+  font-size: 1.4rem;
+}
+h3 {
+  font-size: 0.87rem;
+}
+h4 {
+  font-size: 0.8rem;
+}
+h5 {
+  font-size: 0.77rem;
+}
+small {
+  font-size: 0.75rem;
+}
+
+.text-muted {
+  color: $color-info-dark;
+}
+a {
+  color: $color-dark;
+}
+b {
+  color: $color-dark;
+}
+p {
+  color: $color-dark-variant;
+}
+.primary {
+  color: $color-primary;
+}
+.danger {
+  color: $color-danger;
+}
+.success {
+  color: $color-sucess;
+}
+.warning {
+  color: $color-warning;
+}
