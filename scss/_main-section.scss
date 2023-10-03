@@ -1,9 +1,9 @@
 main {
   margin-top: 1.4rem;
 
-  @include breakPoint-down(small){
-  padding: 0 2.5rem;
-  margin-top: 8rem;
+  @include breakPoint-down(small) {
+    padding: 0 2.5rem;
+    margin-top: 8rem;
   }
 
   .date {
@@ -23,11 +23,10 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.6rem;
-    @include breakPoint-down(medium){
+    @include breakPoint-down(medium) {
       grid-template-columns: 1fr;
       gap: 0;
-     
-       }
+    }
 
     > div {
       background-color: $color-white;
@@ -130,20 +129,18 @@ main {
 
   .recent-orders {
     margin: 2rem 0;
-    @include breakPoint-down(medium){
+    @include breakPoint-down(medium) {
       width: 94%;
       left: 50%;
       position: absolute;
       transform: translateX(-50%);
       margin: 6.5rem 0 0 8.8rem;
-   
-     
-       }
-       @include breakPoint-down(small){
+    }
+    @include breakPoint-down(small) {
       width: 100%;
       position: relative;
       margin: 3rem 0 0 0;
-      }
+    }
 
     h2 {
       margin-bottom: 0.8rem;
@@ -157,17 +154,29 @@ main {
       border-radius: $card-border-radius;
       width: 100%;
       transition: all 300ms ease;
-      @include breakPoint-down(medium){
-        width: 84%;
-     
-     
-       
-         }
-         @include breakPoint-down(small){
-          width: 100%;
-          margin: 0;
-         
+      tr {
+        td {
+          padding: 6px;
+        }
+      }
+
+      thead {
+        tr {
+          th {
+            @include breakPoint-down(small) {
+              text-wrap: nowrap;
+              padding: 2px 6px;
+            }
           }
+        }
+      }
+      @include breakPoint-down(medium) {
+        width: 84%;
+      }
+      @include breakPoint-down(small) {
+        width: 100%;
+        margin: 0;
+      }
       tbody {
         td {
           height: 2.8rem;
@@ -185,12 +194,12 @@ main {
       }
     }
 
-    a{
-        display: block;
-        margin: 0 auto;
-        color: $color-primary;
-        text-align: center;
-        margin-top: 1rem;
+    a {
+      display: block;
+      margin: 0 auto;
+      color: $color-primary;
+      text-align: center;
+      margin-top: 1rem;
     }
   }
 }
